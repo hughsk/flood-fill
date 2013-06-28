@@ -1,0 +1,25 @@
+{
+  "name": "flood-fill",
+  "version": "0.0.0",
+  "description": "A simple 2D flood fill for use with ndarrays",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughsk/flood-fill.git"
+  },
+  "author": "Hugh Kennedy <hughskennedy@gmail.com> (http://hughskennedy.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "zeros": "0.0.0",
+    "colors": "~0.6.0-1"
+  },
+  "keywords": [
+    "flood",
+    "fill",
+    "paint",
+    "bucket",
+    "area",
+    "grid",
+    "ndarray"
+  ]
+}
