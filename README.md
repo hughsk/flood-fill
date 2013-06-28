@@ -20,6 +20,14 @@ npm install flood-fill
 
 Fills the array with `fillValue`, starting from the position at `(x, y)`.
 
+This will also return an object with some very basic metrics for you to use:
+
+* `area`: the total amount of cells filled.
+* `hi`: the highest x/y positions filled.
+* `lo`: the lowest x/y positions filled.
+
+Note that `hi` and `lo` may not have been filled themselves.
+
 ``` javascript
 var fill = require('flood-fill')
 var zero = require('zeros')
