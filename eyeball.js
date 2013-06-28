@@ -17,8 +17,8 @@ for (var x = 0; x < 45; x += 1) grid.set(x, 21, 4)
 for (var y = 0; y < 30; y += 1) grid.set(10, y, 4)
 for (var y = 0; y < 30; y += 1) grid.set(22, y, 4)
 
-fill(grid, 9, 12, 1)
 fill(grid, 15, 22, 2)
+fill(grid, 9, 12, 1)
 fill(grid, 30, 9, 3)
 draw(grid)
 
