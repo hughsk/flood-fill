@@ -5,7 +5,7 @@ function fill(grid, x, y, filler) {
   var height = grid.shape[1]
   var width = grid.shape[0]
   var data = grid.data
-  var empty = data[y + x*height]
+  var empty = grid.get(x, y)
   var queuex = [x]
   var queuey = [y]
   var curry, currx
@@ -26,20 +26,20 @@ function fill(grid, x, y, filler) {
     maxx = currx > maxx ? currx : maxx
     row = currx*height
 
-    if (data[curry + row] === empty) {
+    if (grid.get(currx, curry) === empty) {
       north = south = curry
 
       do {
         north -= 1
       } while (
-        data[north + row] === empty &&
+        grid.get(currx, north) === empty &&
         north >= 0
       )
 
       do {
         south += 1
       } while (
-        data[south + row] === empty &&
+        grid.get(currx, south) === empty &&
         south < height
       )
 
@@ -47,13 +47,13 @@ function fill(grid, x, y, filler) {
       maxy = south-1 > maxy ? south-1 : maxy
 
       for (n = north + 1; n < south; n += 1) {
-        data[n + row] = filler
+        grid.set(currx, n, filler)
         area += 1
-        if (data[n + row - height] === empty) {
+        if (grid.get(currx - 1, n) === empty) {
           queuex.push(currx - 1)
           queuey.push(n)
         }
-        if (data[n + row + height] === empty) {
+        if (grid.get(currx + 1, n) === empty) {
           queuex.push(currx + 1)
           queuey.push(n)
         }
